@@ -238,7 +238,7 @@ export default function RequestPage() {
         </label>
 
         <label style={{ display: "grid", gap: 6 }}>
-          <b>사진(선택, 1~3장)</b>
+          <b>사진(1~3장)</b>
           <input
             type="file"
             accept="image/*"
@@ -249,8 +249,8 @@ export default function RequestPage() {
             }}
           />
           <span style={{ fontSize: 12, color: "#666" }}>
-            지금 버전은 사진이 자동으로 전송되진 않아서, 제출 후 문자에서
-            “첨부”로 같이 보내게 안내합니다.
+            🔥지금 버전은 사진이 자동으로 전송되진 않아서, 제출 후 문자에서
+            “첨부”로 같이 보내게 안내합니다.🔥
           </span>
         </label>
 
