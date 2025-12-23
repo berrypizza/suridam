@@ -59,7 +59,6 @@ export default function Home() {
           <span style={{ fontSize: 12, opacity: 0.85 }}>(사진)</span>
         </a>
       </section>
-
       {/* Scope */}
       <section style={cardStyle}>
         <div style={{ fontSize: 14, fontWeight: 900, letterSpacing: -0.2 }}>
@@ -110,7 +109,6 @@ export default function Home() {
           * 누수탐지/타일 공사/배관 매립 공사는 현재 진행하지 않습니다.
         </div>
       </section>
-
       {/* How */}
       <section style={cardStyle}>
         <div style={{ fontSize: 14, fontWeight: 900, letterSpacing: -0.2 }}>
@@ -162,6 +160,84 @@ export default function Home() {
           </a>
         </div>
       </section>
+      {/* {밑에 부분은 페이지 전화 상담 이어지는 부분} */}
+      {/* <div
+        style={{
+          marginTop: "0px",
+          width: "inherit",
+          zIndex: 9999,
+          pointerEvents: "none",
+        }}>
+        <div
+          style={{
+            pointerEvents: "auto",
+            background: "rgba(255,255,255,0.92)",
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: 20,
+            padding: 10,
+            boxShadow: "0 18px 46px rgba(0,0,0,0.14)",
+            backdropFilter: "blur(12px)",
+          }}>
+          <div style={{ display: "flex", gap: 10 }}>
+            <a
+              href="tel:01091273024"
+              style={{
+                flex: 1,
+                minWidth: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 8,
+                padding: "14px 12px",
+                borderRadius: 16,
+                background: COLORS.accent,
+                color: "#fff",
+                textDecoration: "none",
+                fontWeight: 900,
+                letterSpacing: -0.2,
+                whiteSpace: "nowrap",
+              }}>
+              📞 전화
+              <span style={{ fontSize: 12, opacity: 0.85 }}>상담</span>
+            </a>
+
+            <a
+              href="/request"
+              style={{
+                flex: 1,
+                minWidth: 0,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: 8,
+                padding: "14px 12px",
+                borderRadius: 16,
+                background: COLORS.card,
+                color: COLORS.text,
+                textDecoration: "none",
+                fontWeight: 900,
+                border: `1px solid ${COLORS.border}`,
+                letterSpacing: -0.2,
+                whiteSpace: "nowrap",
+              }}>
+              💬 요청
+              <span style={{ fontSize: 12, color: COLORS.subText }}>사진</span>
+            </a>
+          </div>
+
+          <div
+            style={{
+              marginTop: 8,
+              fontSize: 12,
+              color: COLORS.subText,
+              textAlign: "center",
+              lineHeight: 1.35,
+            }}>
+            상세주소는 상담 후 요청 · 사진은 문자에 첨부
+          </div>
+        </div>
+      </div>{" "} */}
+      {/* {위에 부분은 페이지 전화 상담 이어지는 부분} */}
     </main>
   );
 }
