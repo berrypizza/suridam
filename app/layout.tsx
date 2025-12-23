@@ -44,7 +44,7 @@ export default function RootLayout({
               position: "sticky",
               top: 0,
               zIndex: 20,
-              padding: "12px 0 14px",
+              padding: "1.19px 0 14px",
               backdropFilter: "blur(10px)",
             }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
@@ -55,23 +55,24 @@ export default function RootLayout({
                     fontSize: 18,
                     fontWeight: 900,
                     letterSpacing: -0.2,
+                    display: "inline-block",
+                    justifyContent: "center",
                   }}>
-                  수리담
-                  <div style={{ fontSize: 12, color: COLORS.subText }}>
-                    수리를 담다
+                  <h1>수리담</h1>
+
+                  <div
+                    style={{
+                      display: "inline-block",
+                      fontSize: 12,
+                      color: COLORS.subText,
+                      justifyContent: "center",
+                    }}>
+                    <p>
+                      담을 수리를 찾아보세요, <br /> 수리담의 수리랑에게
+                      요청하면 됩니다.
+                    </p>{" "}
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div style={{ marginTop: 10 }}>
-              <div
-                style={{
-                  fontSize: 12,
-                  color: COLORS.subText,
-                  lineHeight: 1.4,
-                }}>
-                배관 교체 · 사진 1장으로 상담
               </div>
             </div>
           </header>

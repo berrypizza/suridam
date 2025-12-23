@@ -22,7 +22,6 @@ export default function Home() {
     <main style={{ display: "grid", gap: 12 }}>
       {/* Hero */}
       <section style={cardStyle}>
-        <div style={{ fontSize: 12, color: COLORS.subText }}>수리를 담다</div>
         <h1
           style={{
             marginTop: 8,
@@ -38,8 +37,9 @@ export default function Home() {
         </h1>
 
         <p style={{ marginTop: 10, color: COLORS.subText, lineHeight: 1.55 }}>
-          지금은 <b style={{ color: COLORS.text }}>배관 교체</b>부터 시작합니다.
-          사진 1장으로 가능 여부를 먼저 안내드려요.
+          <b style={{ color: COLORS.text }}>작은 수리 </b>부터
+          <b style={{ color: COLORS.text }}> 큰 수리 </b>까지.
+          <br /> 사진 1~3장으로 수리견적 받을 수 있어요.
         </p>
 
         <a
@@ -76,11 +76,11 @@ export default function Home() {
             gap: 10,
           }}>
           {[
-            "수전 교체",
+            "싱크대 수전 교체",
+            "욕실 수전 교체",
             "트랩 교체",
             "앵글밸브 교체",
-            "샤워기/호스",
-            "폽업 교체",
+            "싱크대 배관 교체",
             "간단 막힘",
           ].map((t) => (
             <div
@@ -96,7 +96,9 @@ export default function Home() {
               {t}
               <div
                 style={{ marginTop: 6, fontSize: 12, color: COLORS.subText }}>
-                사진으로 판단
+                사진으로 판단 <br /> {t === "트랩 교체" ? "(준비중)" : ""}
+                {t === "앵글밸브 교체" ? "(준비중)" : ""}
+                {t === "간단 막힘" ? "(준비중)" : ""}
               </div>
             </div>
           ))}
@@ -112,9 +114,35 @@ export default function Home() {
           * 누수탐지/타일 공사/배관 매립 공사는 현재 진행하지 않습니다.
         </div>
       </section>
+
+      <section
+        style={{
+          background: "#FFFFFF",
+          border: "1px solid #E0E0E0",
+          borderRadius: 22,
+          padding: 14,
+          boxShadow: "0 14px 40px rgba(0,0,0,0.06)",
+          display: "flex",
+          alignItems: "center",
+          gap: 12,
+        }}>
+        <Image
+          src={surirang}
+          alt="수리랑"
+          style={{ width: 56, height: "auto" }}
+        />
+
+        <div style={{ lineHeight: 1.35 }}>
+          <div style={{ fontWeight: 900, letterSpacing: -0.2 }}>수리랑</div>
+          <div style={{ fontSize: 12, color: "#777" }}>
+            수리담에 담아, 수리랑들이 갑니다.
+          </div>
+        </div>
+      </section>
       {/* How */}
+
       <section style={cardStyle}>
-        <div style={{ fontSize: 14, fontWeight: 900, letterSpacing: -0.2 }}>
+        <div style={{ fontSize: 16, fontWeight: 900, letterSpacing: -0.2 }}>
           진행 방식
         </div>
 
@@ -124,10 +152,12 @@ export default function Home() {
             paddingLeft: 18,
             color: COLORS.subText,
             lineHeight: 1.7,
+            fontWeight: 700,
+            fontSize: 14,
           }}>
-          <li>사진 1~3장 + 증상 입력</li>
-          <li>가능/불가 및 대략 비용 범위 안내</li>
-          <li>확정 후 상세주소 요청 → 방문</li>
+          <li>요청 누르기(요청하기)</li>
+          <li>양식 작성 → 제출 → 사진 1~3장 전송</li>
+          <li>상담 후 → 수리랑이 방문</li>
         </ol>
 
         <div style={{ marginTop: 12, display: "flex", gap: 10 }}>
@@ -138,10 +168,9 @@ export default function Home() {
               textAlign: "center",
               padding: "12px 12px",
               borderRadius: 16,
-              background: COLORS.card,
-              border: `1px solid ${COLORS.border}`,
+              background: COLORS.accent,
               textDecoration: "none",
-              color: COLORS.text,
+              color: "#fff",
               fontWeight: 900,
             }}>
             💬 요청
@@ -154,9 +183,10 @@ export default function Home() {
               textAlign: "center",
               padding: "12px 12px",
               borderRadius: 16,
-              background: COLORS.accent,
+              background: COLORS.card,
+              border: `1px solid ${COLORS.border}`,
               textDecoration: "none",
-              color: "#fff",
+              color: COLORS.text,
               fontWeight: 900,
             }}>
             📞 전화
@@ -241,30 +271,6 @@ export default function Home() {
         </div>
       </div>{" "} */}
       {/* {위에 부분은 페이지 전화 상담 이어지는 부분} */}
-      <section
-        style={{
-          background: "#FFFFFF",
-          border: "1px solid #E0E0E0",
-          borderRadius: 22,
-          padding: 14,
-          boxShadow: "0 14px 40px rgba(0,0,0,0.06)",
-          display: "flex",
-          alignItems: "center",
-          gap: 12,
-        }}>
-        <Image
-          src={surirang}
-          alt="수리랑"
-          style={{ width: 56, height: "auto" }}
-        />
-
-        <div style={{ lineHeight: 1.35 }}>
-          <div style={{ fontWeight: 900, letterSpacing: -0.2 }}>수리랑</div>
-          <div style={{ fontSize: 12, color: "#777" }}>
-            수리담에 담아, 수리랑들이 갑니다.
-          </div>
-        </div>
-      </section>
     </main>
   );
 }

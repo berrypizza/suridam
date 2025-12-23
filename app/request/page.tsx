@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import surirang from "@/public/surirang.png";
 
@@ -32,6 +32,17 @@ export default function RequestPage() {
   const [photos, setPhotos] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
   const [showCopy, setShowCopy] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+
+  // ▼첫 화면 올리기▼
+  useEffect(() => {
+    if (submitted) {
+      // iOS에서 가끔 키보드/포커스 때문에 스크롤 꼬이는 거 방지
+      (document.activeElement as HTMLElement | null)?.blur?.();
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  }, [submitted]);
+  // ▲첫 화면 올리기▲
 
   const smsBody = useMemo(
     () => buildSmsBody({ name, customerPhone, address, symptom }),
@@ -183,8 +194,14 @@ export default function RequestPage() {
                 <button
                   type="button"
                   onClick={async () => {
-                    await navigator.clipboard.writeText(smsBody);
-                    alert("복사 완료!");
+                    try {
+                      await navigator.clipboard.writeText(smsBody);
+                      setToast("복사했습니다");
+                      setTimeout(() => setToast(null), 1200);
+                    } catch {
+                      setToast("복사할 수 없습니다 (길게 눌러 복사)");
+                      setTimeout(() => setToast(null), 1600);
+                    }
                   }}
                   style={{
                     padding: "6px 10px",
@@ -241,13 +258,14 @@ export default function RequestPage() {
         <label style={{ display: "grid", gap: 6 }}>
           <b>이름</b>
           <input
-            type="text"
-            name="name"
-            autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
             placeholder="홍길동"
+            onInvalid={(e) =>
+              e.currentTarget.setCustomValidity("이름을 입력해 주세요")
+            }
+            onInput={(e) => e.currentTarget.setCustomValidity("")}
             style={{
               padding: "12px 12px",
               border: "1px solid #ddd",
@@ -260,12 +278,14 @@ export default function RequestPage() {
           <b>연락처</b>
           <input
             inputMode="tel"
-            autoComplete="tel"
-            name="tel"
             value={customerPhone}
             onChange={(e) => setCustomerPhone(e.target.value)}
             required
             placeholder="010-0000-0000"
+            onInvalid={(e) =>
+              e.currentTarget.setCustomValidity("연락처를 입력해 주세요")
+            }
+            onInput={(e) => e.currentTarget.setCustomValidity("")}
             style={{
               padding: "12px 12px",
               border: "1px solid #ddd",
@@ -280,13 +300,14 @@ export default function RequestPage() {
             상세주소는 상담 후 요청드려요
           </span>
           <input
-            type="text"
-            name="address"
-            autoComplete="address-level2"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             required
-            placeholder="예) 인천 서구 또는 인천 서구 ○○동"
+            placeholder="예) 인천 서구 ○○동"
+            onInvalid={(e) =>
+              e.currentTarget.setCustomValidity("지역을 입력해 주세요")
+            }
+            onInput={(e) => e.currentTarget.setCustomValidity("")}
             style={{
               padding: "12px 12px",
               border: "1px solid #ddd",
@@ -296,18 +317,21 @@ export default function RequestPage() {
         </label>
 
         <label style={{ display: "grid", gap: 6 }}>
-          <b>증상/요청</b>
+          <b>요청사항/설명</b>
           <textarea
             value={symptom}
             onChange={(e) => setSymptom(e.target.value)}
             required
-            placeholder="예) 수전 연결부에서 물이 샙니다. 교체 원해요."
+            placeholder="예) 수전 연결부에서 물이 샙니다."
+            onInvalid={(e) =>
+              e.currentTarget.setCustomValidity("요청사항을 간단히 적어 주세요")
+            }
+            onInput={(e) => e.currentTarget.setCustomValidity("")}
             rows={5}
             style={{
               padding: "12px 12px",
               border: "1px solid #ddd",
               borderRadius: 12,
-              resize: "vertical",
             }}
           />
         </label>
@@ -349,6 +373,46 @@ export default function RequestPage() {
           상담 목적 외 사용하지 않으며, 상담 완료 후 일정 기간 내 파기합니다.
         </div>
       </form>
+
+      {/* ▼ 토스트 */}
+      {toast && (
+        <div
+          style={{
+            position: "fixed",
+            left: "50%",
+            transform: "translateX(-50%)",
+            bottom: 18,
+            zIndex: 9999,
+            width: "min(420px, calc(100vw - 32px))",
+            pointerEvents: "none",
+          }}>
+          <div
+            style={{
+              background: "rgba(255,255,255,0.92)",
+              border: "1px solid #E0E0E0",
+              borderRadius: 16,
+              padding: "12px 14px",
+              boxShadow: "0 18px 46px rgba(0,0,0,0.14)",
+              backdropFilter: "blur(12px)",
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+            }}>
+            <span
+              style={{
+                width: 8,
+                height: 8,
+                borderRadius: 999,
+                background: "#0E0E0E",
+              }}
+            />
+            <div style={{ fontSize: 13, fontWeight: 900, color: "#111" }}>
+              {toast}
+            </div>
+          </div>
+        </div>
+      )}
+      {/* ▲ 토스트 */}
     </main>
   );
 }
