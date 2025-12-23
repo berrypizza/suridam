@@ -166,6 +166,9 @@ export default function RequestPage() {
         <label style={{ display: "grid", gap: 6 }}>
           <b>이름</b>
           <input
+            type="text"
+            name="name"
+            autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -182,6 +185,8 @@ export default function RequestPage() {
           <b>연락처</b>
           <input
             inputMode="tel"
+            autoComplete="tel"
+            name="tel"
             value={customerPhone}
             onChange={(e) => setCustomerPhone(e.target.value)}
             required
@@ -200,6 +205,9 @@ export default function RequestPage() {
             상세주소는 상담 후 요청드려요
           </span>
           <input
+            type="text"
+            name="address"
+            autoComplete="address-level2"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             required
