@@ -58,8 +58,8 @@ export default function Home() {
             fontWeight: 900,
             letterSpacing: -0.2,
           }}>
-          💬 요청하기{" "}
-          <span style={{ fontSize: 12, opacity: 0.85 }}>(사진)</span>
+          💬 <b style={{ color: "#bbff00ff" }}>요청하기</b>
+          <span style={{ fontSize: 12, opacity: 0.85 }}>(10초 소요)</span>
         </a>
       </section>
 
@@ -159,8 +159,22 @@ export default function Home() {
             fontWeight: 700,
             fontSize: 14,
           }}>
-          <li>요청 누르기(요청하기)</li>
-          <li>양식 작성 → 제출 → 사진 1~3장 전송</li>
+          <li>
+            요청 누르기({" "}
+            <b
+              style={{
+                display: "inline-block",
+                background: "black",
+                color: "#bbff00bb",
+                padding: "0 3px",
+                borderRadius: "7.119px",
+              }}>
+              요청하기
+            </b>{" "}
+            )
+          </li>
+          <li>양식 작성 → 제출 → 문자자동작성</li>
+          <li>사진 1~3장, 자동 작성된 문자랑 같이 전송</li>
           <li>상담 후 → 수리랑이 방문</li>
         </ol>
 
@@ -177,7 +191,8 @@ export default function Home() {
               color: "#fff",
               fontWeight: 900,
             }}>
-            💬 요청
+            💬 <b style={{ color: "#bbff00ff" }}>요청하기</b> <br />
+            <span style={{ fontSize: 12, opacity: 0.85 }}> (10초 소요)</span>
           </a>
 
           <a
@@ -194,6 +209,8 @@ export default function Home() {
               fontWeight: 900,
             }}>
             📞 전화
+            <br />
+            <span style={{ fontSize: 12, opacity: 0.85 }}> (직통 상담)</span>
           </a>
         </div>
       </section>

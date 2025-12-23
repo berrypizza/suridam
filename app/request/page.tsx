@@ -131,7 +131,6 @@ export default function RequestPage() {
               style={{
                 color: "#911",
                 lineHeight: 3,
-                fontWeight: "100",
                 fontSize: 12,
               }}>
               🔥‘문자로 보내기’를 누르면 문자 화면이 열립니다.🔥
@@ -443,8 +442,9 @@ export default function RequestPage() {
             }}
           /> */}
           <span style={{ fontSize: 12, color: "#911" }}>
-            🔥지금 버전은 사진이 자동으로 전송되진 않아서,🔥 <br />
-            🔥제출 후 문자에서 “첨부”로 같이 보내게 안내합니다.🔥
+            🔥 지금 버전은 사진이 자동으로 전송되진 않습니다. 🔥 <br />
+            🔥 제출 후, 문자로 보내기(자동작성) 단계로 → 🔥 <br />
+            🔥 문자 화면에서 사진 1~3장 보내기 🔥
           </span>
         </label>
 
