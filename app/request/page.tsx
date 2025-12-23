@@ -1,6 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
+import surirang from "@/public/surirang.png";
 
 const OWNER_PHONE = "01091273024";
 
@@ -45,21 +47,68 @@ export default function RequestPage() {
   if (submitted) {
     return (
       <main style={{ padding: 16, fontFamily: "system-ui" }}>
-        <h1 style={{ fontSize: 22, fontWeight: 800 }}>접수 준비 완료</h1>
-        <p style={{ marginTop: 8, color: "#444", lineHeight: 1.5 }}>
-          아래 <b>문자 보내기</b>를 누르면 내용이 자동으로 작성돼요.
-          {photos.length > 0 ? (
-            <>
-              <br />
-              선택한 사진은 <b>문자 화면에서 첨부</b>로 추가해서 보내주세요.
-            </>
-          ) : (
-            <>
-              <br />
-              사진이 있으면 <b>문자 첨부</b>로 같이 보내주면 더 빨라요.
-            </>
-          )}
-        </p>
+        <h1
+          style={{
+            color: "#1119",
+            fontSize: 22,
+            fontWeight: 700,
+            paddingBottom: "10px",
+          }}>
+          접수 준비 완료
+        </h1>
+
+        <div
+          style={{
+            display: "block",
+            padding: "14px 16px",
+            border: "1px solid #ddd",
+            borderRadius: 12,
+            textDecoration: "none",
+            color: "#111",
+            // textAlign: "center",
+          }}>
+          {/* 수리랑 ▼ */}
+          <div style={{ textAlign: "center", marginTop: 11, marginBottom: 19 }}>
+            <Image
+              src={surirang}
+              alt="수리랑"
+              priority
+              style={{
+                width: "45.119%",
+                height: "auto",
+                margin: "0 auto",
+              }}
+            />
+          </div>
+          {/* 수리랑 ▲ */}
+
+          <h1 style={{ fontSize: 20, fontWeight: 900 }}>
+            수리랑이 확인 중입니다.
+          </h1>
+
+          <p
+            style={{
+              fontSize: 14.5,
+              marginTop: 8,
+              color: "#444",
+              lineHeight: 1.5,
+            }}>
+            사진이 있으면 정확도가 크게 올라갑니다.
+            <br />
+            <b
+              style={{
+                display: "inline-block",
+                fontWeight: 1000,
+                background: "black",
+                color: "#d1d1d1ff",
+                borderRadius: "6.119px",
+              }}>
+              문자 화면 에서 <b>사진 1~3장</b>
+            </b>
+            을 <b style={{ fontWeight: 900, color: "black" }}>첨부</b> 해
+            주세요.
+          </p>
+        </div>
 
         <div style={{ display: "grid", gap: 10, marginTop: 16 }}>
           <a

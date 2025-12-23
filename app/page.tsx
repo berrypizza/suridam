@@ -29,9 +29,9 @@ export default function Home() {
             letterSpacing: -0.4,
             lineHeight: 1.15,
           }}>
-          필요한 수리만,
+          상담부터 방문까지,
           <br />
-          담아서 해결합니다
+          수리를 담다.
         </h1>
 
         <p style={{ marginTop: 10, color: COLORS.subText, lineHeight: 1.55 }}>
