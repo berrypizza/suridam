@@ -92,7 +92,7 @@ export default function RequestPage() {
               alt="수리랑"
               priority
               style={{
-                width: "45.119%",
+                width: "59.119%",
                 height: "auto",
                 margin: "0 auto",
               }}
