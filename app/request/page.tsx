@@ -33,6 +33,12 @@ export default function RequestPage() {
   const [submitted, setSubmitted] = useState(false);
   const [showCopy, setShowCopy] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
+  const [errors, setErrors] = useState<{
+    name?: string;
+    customerPhone?: string;
+    address?: string;
+    symptom?: string;
+  }>({});
 
   // ▼첫 화면 올리기▼
   useEffect(() => {
@@ -250,8 +256,25 @@ export default function RequestPage() {
       </p>
 
       <form
+        noValidate
         onSubmit={(e) => {
           e.preventDefault();
+          const next: typeof errors = {};
+
+          if (!name.trim()) next.name = "이름을 입력해 주세요";
+          if (!customerPhone.trim())
+            next.customerPhone = "연락처를 입력해 주세요";
+          if (!address.trim()) next.address = "지역을 입력해 주세요";
+          if (!symptom.trim()) next.symptom = "증상을 간단히 적어 주세요";
+
+          setErrors(next);
+
+          // 에러 있으면 제출 막기
+          if (Object.keys(next).length > 0) {
+            // 첫 에러로 스크롤/포커스(선택)
+            return;
+          }
+
           setSubmitted(true);
         }}
         style={{ marginTop: 16, display: "grid", gap: 12 }}>
@@ -259,39 +282,62 @@ export default function RequestPage() {
           <b>이름</b>
           <input
             value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
+            onChange={(e) => {
+              setName(e.target.value);
+              setErrors((prev) => ({ ...prev, name: undefined }));
+            }}
             placeholder="홍길동"
-            onInvalid={(e) =>
-              e.currentTarget.setCustomValidity("이름을 입력해 주세요")
-            }
-            onInput={(e) => e.currentTarget.setCustomValidity("")}
             style={{
               padding: "12px 12px",
-              border: "1px solid #ddd",
+              border: `1px solid ${errors.name ? "#E5484D" : "#ddd"}`,
               borderRadius: 12,
+              outline: "none",
             }}
           />
+          {errors.name && (
+            <div
+              style={{
+                marginTop: 6,
+                fontSize: 12,
+                color: "#E5484D",
+                fontWeight: 700,
+              }}>
+              {errors.name}
+            </div>
+          )}
         </label>
 
         <label style={{ display: "grid", gap: 6 }}>
           <b>연락처</b>
           <input
+            type="tel"
             inputMode="tel"
+            autoComplete="tel"
+            name="tel"
             value={customerPhone}
-            onChange={(e) => setCustomerPhone(e.target.value)}
-            required
+            onChange={(e) => {
+              setCustomerPhone(e.target.value);
+              setErrors((prev) => ({ ...prev, customerPhone: undefined }));
+            }}
             placeholder="010-0000-0000"
-            onInvalid={(e) =>
-              e.currentTarget.setCustomValidity("연락처를 입력해 주세요")
-            }
-            onInput={(e) => e.currentTarget.setCustomValidity("")}
             style={{
               padding: "12px 12px",
-              border: "1px solid #ddd",
+              border: `1px solid ${errors.customerPhone ? "#E5484D" : "#ddd"}`,
               borderRadius: 12,
+              outline: "none",
             }}
           />
+          {errors.customerPhone && (
+            <div
+              style={{
+                marginTop: 6,
+                fontSize: 12,
+                color: "#E5484D",
+                fontWeight: 700,
+              }}>
+              {errors.customerPhone}
+            </div>
+          )}
         </label>
 
         <label style={{ display: "grid", gap: 6 }}>
@@ -299,41 +345,66 @@ export default function RequestPage() {
           <span style={{ color: "#777", fontSize: 12 }}>
             상세주소는 상담 후 요청드려요
           </span>
+
           <input
+            name="address"
+            autoComplete="address-level2"
             value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            required
+            onChange={(e) => {
+              setAddress(e.target.value);
+              setErrors((prev) => ({ ...prev, address: undefined }));
+            }}
             placeholder="예) 인천 서구 ○○동"
-            onInvalid={(e) =>
-              e.currentTarget.setCustomValidity("지역을 입력해 주세요")
-            }
-            onInput={(e) => e.currentTarget.setCustomValidity("")}
             style={{
               padding: "12px 12px",
-              border: "1px solid #ddd",
+              border: `1px solid ${errors.address ? "#E5484D" : "#ddd"}`,
               borderRadius: 12,
+              outline: "none",
             }}
           />
+
+          {errors.address && (
+            <div
+              style={{
+                marginTop: 6,
+                fontSize: 12,
+                color: "#E5484D",
+                fontWeight: 700,
+              }}>
+              {errors.address}
+            </div>
+          )}
         </label>
 
         <label style={{ display: "grid", gap: 6 }}>
           <b>요청사항/설명</b>
           <textarea
             value={symptom}
-            onChange={(e) => setSymptom(e.target.value)}
-            required
+            onChange={(e) => {
+              setSymptom(e.target.value);
+              setErrors((prev) => ({ ...prev, symptom: undefined }));
+            }}
             placeholder="예) 수전 연결부에서 물이 샙니다."
-            onInvalid={(e) =>
-              e.currentTarget.setCustomValidity("요청사항을 간단히 적어 주세요")
-            }
-            onInput={(e) => e.currentTarget.setCustomValidity("")}
             rows={5}
             style={{
               padding: "12px 12px",
-              border: "1px solid #ddd",
+              border: `1px solid ${errors.symptom ? "#E5484D" : "#ddd"}`,
               borderRadius: 12,
+              outline: "none",
+              resize: "vertical",
             }}
           />
+          {errors.symptom && (
+            <div
+              style={{
+                marginTop: 6,
+                fontSize: 12,
+                color: "#E5484D",
+                fontWeight: 700,
+              }}>
+              {errors.symptom}
+            </div>
+          )}
         </label>
 
         <label style={{ display: "grid", gap: 6 }}>
