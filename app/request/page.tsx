@@ -134,7 +134,7 @@ export default function RequestPage() {
                 fontWeight: "100",
                 fontSize: 12,
               }}>
-              문자 화면은 다음화면(하단 "문자로 보내기")에서 나옵니다.{" "}
+              🔥‘문자로 보내기’를 누르면 문자 화면이 열립니다.🔥
             </b>
           </p>
         </div>
