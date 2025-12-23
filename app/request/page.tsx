@@ -101,7 +101,7 @@ export default function RequestPage() {
           {/* 수리랑 ▲ */}
 
           <h1 style={{ fontSize: 20, fontWeight: 900 }}>
-            수리랑이 확인 중입니다.
+            문자를 기다리는 수리랑
           </h1>
 
           <p
@@ -118,13 +118,24 @@ export default function RequestPage() {
                 display: "inline-block",
                 fontWeight: 1000,
                 background: "black",
-                color: "#d1d1d1ff",
+                color: "#bbff00ff",
                 borderRadius: "6.119px",
+                padding: "0 3px",
               }}>
-              문자 화면 에서 <b>사진 1~3장</b>
+              문자 화면에서 <b>사진 1~3장</b>
             </b>
             을 <b style={{ fontWeight: 900, color: "black" }}>첨부</b> 해
             주세요.
+            <br />
+            <b
+              style={{
+                color: "#911",
+                lineHeight: 3,
+                fontWeight: "100",
+                fontSize: 12,
+              }}>
+              문자 화면은 다음화면(하단 "문자로 보내기")에서 나옵니다.{" "}
+            </b>
           </p>
         </div>
 
@@ -141,7 +152,8 @@ export default function RequestPage() {
               fontWeight: 800,
               textAlign: "center",
             }}>
-            💬 문자로 보내기(자동작성)
+            💬 <b style={{ color: "#bbff00ff" }}>문자로 보내기</b>({" "}
+            <b>자동작성</b> )
           </a>
 
           <a
@@ -252,7 +264,19 @@ export default function RequestPage() {
     <main style={{ padding: 16, fontFamily: "system-ui" }}>
       <h1 style={{ fontSize: 22, fontWeight: 800 }}>배관 교체 상담</h1>
       <p style={{ marginTop: 8, color: "#444", lineHeight: 1.5 }}>
-        사진/정보를 입력하고 제출하면, 바로 <b>문자 자동작성</b>으로 연결돼요.
+        사진/정보를 입력하고 제출하면, <br /> 바로{" "}
+        <b
+          style={{
+            display: "inline-block",
+            fontWeight: 1000,
+            background: "black",
+            color: "#bbff00ff",
+            borderRadius: "6.119px",
+            padding: "0 3px",
+          }}>
+          문자 자동작성
+        </b>
+        으로 연결돼요.
       </p>
 
       <form
@@ -409,7 +433,7 @@ export default function RequestPage() {
 
         <label style={{ display: "grid", gap: 6 }}>
           <b>사진(1~3장)</b>
-          <input
+          {/* <input
             type="file"
             accept="image/*"
             multiple
@@ -417,10 +441,10 @@ export default function RequestPage() {
               const files = Array.from(e.target.files ?? []);
               setPhotos(files.slice(0, 3));
             }}
-          />
-          <span style={{ fontSize: 12, color: "#666" }}>
-            🔥지금 버전은 사진이 자동으로 전송되진 않아서, 제출 후 문자에서
-            “첨부”로 같이 보내게 안내합니다.🔥
+          /> */}
+          <span style={{ fontSize: 12, color: "#911" }}>
+            🔥지금 버전은 사진이 자동으로 전송되진 않아서,🔥 <br />
+            🔥제출 후 문자에서 “첨부”로 같이 보내게 안내합니다.🔥
           </span>
         </label>
 
@@ -435,7 +459,7 @@ export default function RequestPage() {
             fontWeight: 900,
             cursor: "pointer",
           }}>
-          제출하고 문자 작성으로 이동
+          제출하고<b style={{ color: "#bbff00ff" }}> 문자 작성</b> 으로 이동
         </button>
 
         <div style={{ fontSize: 12, color: "#666", lineHeight: 1.5 }}>
