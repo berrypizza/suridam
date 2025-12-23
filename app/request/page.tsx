@@ -15,7 +15,7 @@ function buildSmsBody(v: {
     "[수리담 배관교체 상담]",
     `이름: ${v.name}`,
     `연락처: ${v.customerPhone}`,
-    `주소: ${v.address}`,
+    `지역(동): ${v.address}`,
     `증상: ${v.symptom}`,
     "",
     "※ 사진은 이 문자에 '첨부'로 같이 보내주세요.",
@@ -181,6 +181,7 @@ export default function RequestPage() {
         <label style={{ display: "grid", gap: 6 }}>
           <b>연락처</b>
           <input
+            inputMode="tel"
             value={customerPhone}
             onChange={(e) => setCustomerPhone(e.target.value)}
             required
@@ -194,12 +195,15 @@ export default function RequestPage() {
         </label>
 
         <label style={{ display: "grid", gap: 6 }}>
-          <b>주소(동/호까지)</b>
+          <b>지역 (동까지만)</b>
+          <span style={{ color: "#777", fontSize: 12 }}>
+            상세주소는 상담 후 요청드려요
+          </span>
           <input
             value={address}
             onChange={(e) => setAddress(e.target.value)}
             required
-            placeholder="예) 인천 ○○구 ○○동 ○○아파트 ○동 ○호"
+            placeholder="예) 인천 서구 또는 인천 서구 ○○동"
             style={{
               padding: "12px 12px",
               border: "1px solid #ddd",
