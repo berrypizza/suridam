@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import JarMark from "./components/JarMark";
+import HammerMark from "./components/HammerMark";
 
 export const metadata: Metadata = {
   title: "수리담",
@@ -49,7 +49,7 @@ export default function RootLayout({
             }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 10 }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <JarMark size={22} />
+                <HammerMark size={22} />
                 <div
                   style={{
                     fontSize: 18,
@@ -57,11 +57,10 @@ export default function RootLayout({
                     letterSpacing: -0.2,
                   }}>
                   수리담
+                  <div style={{ fontSize: 12, color: COLORS.subText }}>
+                    수리를 담다
+                  </div>
                 </div>
-              </div>
-
-              <div style={{ fontSize: 12, color: COLORS.subText }}>
-                수리를 담다
               </div>
             </div>
 
@@ -81,7 +80,7 @@ export default function RootLayout({
           {children}
 
           {/* Bottom fixed bar (container-like, pottery vibe) */}
-          <div
+          {/* <div
             style={{
               position: "fixed",
               left: "50%",
@@ -161,7 +160,7 @@ export default function RootLayout({
                 상세주소는 상담 후 요청 · 사진은 문자에 첨부
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </body>
     </html>
