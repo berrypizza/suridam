@@ -31,6 +31,7 @@ export default function RequestPage() {
   const [symptom, setSymptom] = useState("");
   const [photos, setPhotos] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const [showCopy, setShowCopy] = useState(false);
 
   const smsBody = useMemo(
     () => buildSmsBody({ name, customerPhone, address, symptom }),
@@ -141,59 +142,84 @@ export default function RequestPage() {
             📞 전화로 바로 상담
           </a>
         </div>
-
         <div
           style={{
             marginTop: 16,
             border: "1px solid #eee",
             borderRadius: 12,
-            padding: 12,
             background: "#fafafa",
+            overflow: "hidden",
           }}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              gap: 8,
-            }}>
-            <b>보낼 내용(복사용)</b>
-            <button
-              type="button"
-              onClick={async () => {
-                await navigator.clipboard.writeText(smsBody);
-                alert("복사 완료!");
-              }}
-              style={{
-                padding: "6px 10px",
-                borderRadius: 10,
-                border: "1px solid #ddd",
-                background: "#fff",
-                fontWeight: 700,
-                cursor: "pointer",
-              }}>
-              복사
-            </button>
-          </div>
-
-          <pre style={{ marginTop: 10, whiteSpace: "pre-wrap", fontSize: 12 }}>
-            {smsBody}
-          </pre>
-
+          {/* 헤더 */}
           <button
             type="button"
-            onClick={() => setSubmitted(false)}
+            onClick={() => setShowCopy((v) => !v)}
             style={{
-              marginTop: 12,
               width: "100%",
               padding: "12px 14px",
-              borderRadius: 12,
-              border: "1px solid #ddd",
-              background: "#fff",
-              fontWeight: 800,
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              background: "transparent",
+              border: "none",
               cursor: "pointer",
+              fontWeight: 800,
             }}>
-            ← 내용 수정하기
+            <span>보낼 내용 확인하기 </span>
+            <span style={{ fontSize: 12, color: "#666" }}>
+              {showCopy ? "접기 ▲" : "열기 ▼"}
+            </span>
           </button>
+
+          {/* 내용 */}
+          {showCopy && (
+            <div style={{ padding: 12, borderTop: "1px solid #eee" }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  gap: 8,
+                }}>
+                <button
+                  type="button"
+                  onClick={async () => {
+                    await navigator.clipboard.writeText(smsBody);
+                    alert("복사 완료!");
+                  }}
+                  style={{
+                    padding: "6px 10px",
+                    borderRadius: 10,
+                    border: "1px solid #ddd",
+                    background: "#fff",
+                    fontWeight: 700,
+                    cursor: "pointer",
+                  }}>
+                  복사
+                </button>
+              </div>
+
+              <pre
+                style={{ marginTop: 10, whiteSpace: "pre-wrap", fontSize: 12 }}>
+                {smsBody}
+              </pre>
+
+              <button
+                type="button"
+                onClick={() => setSubmitted(false)}
+                style={{
+                  marginTop: 12,
+                  width: "100%",
+                  padding: "12px 14px",
+                  borderRadius: 12,
+                  border: "1px solid #ddd",
+                  background: "#fff",
+                  fontWeight: 800,
+                  cursor: "pointer",
+                }}>
+                ← 내용 수정하기
+              </button>
+            </div>
+          )}
         </div>
       </main>
     );

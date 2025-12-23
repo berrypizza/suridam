@@ -1,3 +1,6 @@
+import Image from "next/image";
+import surirang from "@/public/surirang.png";
+
 export default function Home() {
   const COLORS = {
     card: "#FFFFFF",
@@ -238,6 +241,30 @@ export default function Home() {
         </div>
       </div>{" "} */}
       {/* {위에 부분은 페이지 전화 상담 이어지는 부분} */}
+      <section
+        style={{
+          background: "#FFFFFF",
+          border: "1px solid #E0E0E0",
+          borderRadius: 22,
+          padding: 14,
+          boxShadow: "0 14px 40px rgba(0,0,0,0.06)",
+          display: "flex",
+          alignItems: "center",
+          gap: 12,
+        }}>
+        <Image
+          src={surirang}
+          alt="수리랑"
+          style={{ width: 56, height: "auto" }}
+        />
+
+        <div style={{ lineHeight: 1.35 }}>
+          <div style={{ fontWeight: 900, letterSpacing: -0.2 }}>수리랑</div>
+          <div style={{ fontSize: 12, color: "#777" }}>
+            수리담에 담아, 수리랑들이 갑니다.
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
