@@ -5,6 +5,20 @@ import Image from "next/image";
 import surirang from "@/public/surirang.png";
 
 const OWNER_PHONE = "01091273024";
+const COLORS = {
+  card: "#FFFFFF",
+  text: "#111111",
+  subText: "#777777",
+  border: "#E0E0E0",
+  accent: "#0E0E0E",
+};
+const cardStyle: React.CSSProperties = {
+  background: COLORS.card,
+  border: `1px solid ${COLORS.border}`,
+  borderRadius: 22,
+  padding: 16,
+  boxShadow: "0 14px 40px rgba(0,0,0,0.08)",
+};
 
 // 문자 본문 만들기
 function buildSmsBody(v: {
@@ -261,7 +275,7 @@ export default function RequestPage() {
 
   return (
     <main style={{ padding: 16, fontFamily: "system-ui" }}>
-      <h1 style={{ fontSize: 22, fontWeight: 800 }}>배관 교체 상담</h1>
+      <h1 style={{ fontSize: 22, fontWeight: 800 }}>문자 수리 상담</h1>
       <p style={{ marginTop: 8, color: "#444", lineHeight: 1.5 }}>
         사진/정보를 입력하고 제출하면, <br /> 바로{" "}
         <b
@@ -300,7 +314,16 @@ export default function RequestPage() {
 
           setSubmitted(true);
         }}
-        style={{ marginTop: 16, display: "grid", gap: 12 }}>
+        style={{
+          background: COLORS.card,
+          border: `1px solid ${COLORS.border}`,
+          borderRadius: 22,
+          padding: 16,
+          boxShadow: "0 14px 40px rgba(0,0,0,0.08)",
+          marginTop: 16,
+          display: "grid",
+          gap: 12,
+        }}>
         <label style={{ display: "grid", gap: 6 }}>
           <b>이름</b>
           <input
