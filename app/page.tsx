@@ -1,5 +1,6 @@
 import Image from "next/image";
 import surirang from "@/public/surirang.png";
+import surirangDance from "@/public/surirangDance.webp";
 
 export default function Home() {
   const COLORS = {
@@ -9,6 +10,8 @@ export default function Home() {
     border: "#E0E0E0",
     accent: "#0E0E0E",
   };
+
+  const YT_URL = "https://www.youtube.com/@surirang-911/shorts";
 
   const cardStyle: React.CSSProperties = {
     background: COLORS.card,
@@ -298,6 +301,44 @@ export default function Home() {
         </div>
       </div>{" "} */}
       {/* {위에 부분은 페이지 전화 상담 이어지는 부분} */}
+
+      <a
+        href={YT_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+          padding: "14px 16px",
+          borderRadius: 16,
+          background: COLORS.accent,
+          textDecoration: "none",
+          color: "#fff",
+          fontWeight: 900,
+        }}>
+        {/* 수리랑 이미지 */}
+        <Image
+          src={surirang}
+          alt="수리랑"
+          width={56}
+          height={56}
+          style={{
+            borderRadius: "50%",
+            flexShrink: 0,
+          }}
+        />
+
+        {/* 텍스트 영역 */}
+        <div style={{ lineHeight: 1.2 }}>
+          <div style={{ fontSize: 15, marginBottom: "7px" }}>
+            ▶ <span style={{ color: "#bbff00ff" }}>YouTube</span>
+          </div>
+          <div style={{ fontSize: 12, opacity: 0.85 }}>
+            수리담 유튜브 보러가기
+          </div>
+        </div>
+      </a>
     </main>
   );
 }
