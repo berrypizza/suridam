@@ -91,12 +91,11 @@ export default function RequestPage() {
 
         <div
           style={{
-            display: "block",
-            padding: "14px 16px",
-            border: "1px solid #ddd",
-            borderRadius: 12,
-            textDecoration: "none",
-            color: "#111",
+            background: COLORS.card,
+            border: `1px solid ${COLORS.border}`,
+            borderRadius: 22,
+            padding: 16,
+            boxShadow: "0 14px 40px rgba(0,0,0,0.08)",
             // textAlign: "center",
           }}>
           {/* 수리랑 ▼ */}
