@@ -137,7 +137,6 @@ export default function Home() {
               style={{
                 borderRadius: "50%",
                 flexShrink: 0,
-                border: "solid 1px #bbff00ff",
                 background: "#fff",
               }}
             />
@@ -175,7 +174,6 @@ export default function Home() {
               style={{
                 borderRadius: "50%",
                 flexShrink: 0,
-                border: "solid 1px #bbff00ff",
                 background: "#fff",
               }}
             />
