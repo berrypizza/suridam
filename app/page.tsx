@@ -70,33 +70,126 @@ export default function Home() {
         </a>
       </section>
 
-      {/* ▼수리랑 매인 페이지 카드 */}
+      {/* ▼ 수리랑 메인 카드 (CTA 포함) */}
       <section
         style={{
           background: "#FFFFFF",
           border: "1px solid #E0E0E0",
           borderRadius: 22,
-          padding: 14,
+          padding: 16,
           boxShadow: "0 14px 40px rgba(0,0,0,0.06)",
           display: "flex",
-          alignItems: "center",
-          gap: 12,
+          flexDirection: "column",
+          gap: 14,
         }}>
-        <Image
-          src={surirang}
-          alt="수리랑"
-          style={{ width: 56, height: "auto" }}
-        />
+        {/* 상단 브랜드 영역 */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
+          }}>
+          <Image
+            src={surirang}
+            alt="수리랑"
+            style={{
+              width: 56,
+              height: "auto",
+            }}
+          />
 
-        <div style={{ lineHeight: 1.35 }}>
-          <div style={{ fontWeight: 900, letterSpacing: -0.2 }}>수리랑</div>
-          <div style={{ fontSize: 12, color: "#777" }}>
-            수리담에 담아, 수리랑들이 갑니다.
+          <div style={{ lineHeight: 1.35 }}>
+            <div style={{ fontWeight: 900, letterSpacing: -0.2 }}>수리랑</div>
+            <div style={{ fontSize: 12, color: "#777" }}>
+              수리담에 담아, 수리랑들이 갑니다.
+            </div>
           </div>
         </div>
-      </section>
-      {/* ▲수리랑 매인 페이지 카드 */}
 
+        {/* 하단 CTA 버튼 영역 */}
+        <div
+          style={{
+            display: "flex",
+            gap: 10,
+          }}>
+          {/* 유튜브 */}
+          <a
+            href={YT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              padding: "12px 14px",
+              borderRadius: 14,
+              background: COLORS.accent,
+              textDecoration: "none",
+              color: "#fff",
+              fontWeight: 900,
+            }}>
+            <Image
+              src={surirang3}
+              alt="수리랑 유튜브"
+              width={40}
+              height={40}
+              style={{
+                borderRadius: "50%",
+                flexShrink: 0,
+                border: "solid 1px #bbff00ff",
+                background: "#fff",
+              }}
+            />
+            <div style={{ lineHeight: 1.2 }}>
+              <div style={{ fontSize: 14, marginBottom: "3px" }}>
+                <span style={{}}>▶</span>
+                <span style={{ color: "#bbff00ff" }}>YouTube</span>
+              </div>
+              <div style={{ fontSize: 11, opacity: 0.85 }}>영상 보러가기</div>
+            </div>
+          </a>
+
+          {/* 블로그 */}
+          <a
+            href={NB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              flex: 1,
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              padding: "12px 14px",
+              borderRadius: 14,
+              background: "#009744ff", // 네이버 느낌
+              textDecoration: "none",
+              color: "#fff",
+              fontWeight: 900,
+            }}>
+            <Image
+              src={surirang2}
+              alt="수리랑 블로그"
+              width={40}
+              height={40}
+              style={{
+                borderRadius: "50%",
+                flexShrink: 0,
+                border: "solid 1px #bbff00ff",
+                background: "#fff",
+              }}
+            />
+            <div style={{ lineHeight: 1.2 }}>
+              <div style={{ fontSize: 14, marginBottom: "3px" }}>
+                <span style={{ fontWeight: 900 }}>N</span>
+                <span style={{ color: "#bbff00ff" }}> Blog</span>
+              </div>
+              <div style={{ fontSize: 11, opacity: 0.9 }}>블로그 보기</div>
+            </div>
+          </a>
+        </div>
+      </section>
+      {/* ▲ 수리랑 메인 카드 */}
       {/* Scope */}
       <section style={cardStyle}>
         <div style={{ fontSize: 14, fontWeight: 900, letterSpacing: -0.2 }}>
@@ -305,82 +398,6 @@ export default function Home() {
         </div>
       </div>{" "} */}
       {/* {위에 부분은 페이지 전화 상담 이어지는 부분} */}
-
-      <a
-        href={YT_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 14,
-          padding: "14px 16px",
-          borderRadius: 16,
-          background: COLORS.accent,
-          textDecoration: "none",
-          color: "#fff",
-          fontWeight: 900,
-        }}>
-        {/* 수리랑 이미지 */}
-        <Image
-          src={surirang3}
-          alt="수리랑"
-          width={56}
-          height={56}
-          style={{
-            borderRadius: "50%",
-            flexShrink: 0,
-          }}
-        />
-
-        {/* 텍스트 영역 */}
-        <div style={{ lineHeight: 1.2 }}>
-          <div style={{ fontSize: 15, marginBottom: "7px" }}>
-            ▶ <span style={{ color: "#bbff00ff" }}>YouTube</span>
-          </div>
-          <div style={{ fontSize: 12, opacity: 0.85 }}>
-            수리담 유튜브 보러가기
-          </div>
-        </div>
-      </a>
-      <a
-        href={NB_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 14,
-          padding: "14px 16px",
-          borderRadius: 16,
-          background: COLORS.accent,
-          textDecoration: "none",
-          color: "#fff",
-          fontWeight: 900,
-        }}>
-        {/* 수리랑 이미지 */}
-        <Image
-          src={surirang2}
-          alt="수리랑"
-          width={56}
-          height={56}
-          style={{
-            borderRadius: "50%",
-            flexShrink: 0,
-          }}
-        />
-
-        {/* 텍스트 영역 */}
-        <div style={{ lineHeight: 1.2 }}>
-          <div style={{ fontSize: 15, marginBottom: "7px" }}>
-            <span style={{ fontWeight: "900" }}>N</span>{" "}
-            <span style={{ color: "#bbff00ff" }}>Naver Blog</span>
-          </div>
-          <div style={{ fontSize: 12, opacity: 0.85 }}>
-            수리담 블로그 보러가기
-          </div>
-        </div>
-      </a>
     </main>
   );
 }
