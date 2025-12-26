@@ -1,5 +1,8 @@
 import Image from "next/image";
 import surirang from "@/public/surirang.png";
+import surirang2 from "@/public/suriragn2.png";
+import surirang3 from "@/public/surirang3.png";
+
 import surirangDance from "@/public/surirangDance.webp";
 
 export default function Home() {
@@ -12,6 +15,7 @@ export default function Home() {
   };
 
   const YT_URL = "https://www.youtube.com/@surirang-911/shorts";
+  const NB_URL = "https://blog.naver.com/sofaresq";
 
   const cardStyle: React.CSSProperties = {
     background: COLORS.card,
@@ -319,7 +323,7 @@ export default function Home() {
         }}>
         {/* 수리랑 이미지 */}
         <Image
-          src={surirang}
+          src={surirang3}
           alt="수리랑"
           width={56}
           height={56}
@@ -336,6 +340,44 @@ export default function Home() {
           </div>
           <div style={{ fontSize: 12, opacity: 0.85 }}>
             수리담 유튜브 보러가기
+          </div>
+        </div>
+      </a>
+      <a
+        href={NB_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 14,
+          padding: "14px 16px",
+          borderRadius: 16,
+          background: COLORS.accent,
+          textDecoration: "none",
+          color: "#fff",
+          fontWeight: 900,
+        }}>
+        {/* 수리랑 이미지 */}
+        <Image
+          src={surirang2}
+          alt="수리랑"
+          width={56}
+          height={56}
+          style={{
+            borderRadius: "50%",
+            flexShrink: 0,
+          }}
+        />
+
+        {/* 텍스트 영역 */}
+        <div style={{ lineHeight: 1.2 }}>
+          <div style={{ fontSize: 15, marginBottom: "7px" }}>
+            <span style={{ fontWeight: "900" }}>N</span>{" "}
+            <span style={{ color: "#bbff00ff" }}>Naver Blog</span>
+          </div>
+          <div style={{ fontSize: 12, opacity: 0.85 }}>
+            수리담 블로그 보러가기
           </div>
         </div>
       </a>
