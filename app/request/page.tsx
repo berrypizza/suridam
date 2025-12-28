@@ -6,8 +6,7 @@ import surirang from "@/public/surirang.png";
 
 const OWNER_PHONE = "01091273024";
 const YT_URL = "https://www.youtube.com/shorts/CuHnjj4o-J4";
-const BLOG_URL = "https://blog.naver.com"; // 나중에 정확한 주소로 교체
-
+const BLOG_URL = "https://blog.naver.com/sofaresq"; // 나중에 메인 글로 변경하기
 const COLORS = {
   card: "#FFFFFF",
   text: "#111111",
