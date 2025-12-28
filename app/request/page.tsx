@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import Image from "next/image";
 import surirang from "@/public/surirang.png";
+import surirangDance from "@/public/suriragn2.png";
 
 const OWNER_PHONE = "01091273024";
 const YT_URL = "https://www.youtube.com/shorts/CuHnjj4o-J4";
@@ -59,30 +60,33 @@ export default function RequestPage() {
   return (
     <main style={{ padding: 16, fontFamily: "system-ui" }}>
       {/* 헤더 카드 */}
+      <div style={{ textAlign: "center" }}>
+        <Image
+          src={surirangDance}
+          alt="수리랑"
+          priority
+          style={{
+            width: "56%",
+            height: "auto",
+            display: "inline-block",
+          }}
+        />
+      </div>
+
       <div
         style={{
-          background: COLORS.card,
+          background: "#fafafa",
           border: `1px solid ${COLORS.border}`,
           borderRadius: 22,
           padding: 16,
           boxShadow: "0 14px 40px rgba(0,0,0,0.08)",
           textAlign: "center",
         }}>
-        <Image
-          src={surirang}
-          alt="수리랑"
-          priority
-          style={{ width: "56%", height: "auto", display: "inline-block" }}
-        />
         <h1
           style={{
-            fontSize: 22,
+            fontSize: 24,
             fontWeight: 800,
-            marginTop: 16,
-            background: "black",
-            color: "#fff",
-            display: "inline-block",
-            padding: "2px 10px",
+            color: "#444",
             borderRadius: 8,
           }}>
           문자 수리 상담
