@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: "수리담",
     images: [
       {
-        url: "/logo.png",
+        url: "/og-logo.png",
         width: 1200,
         height: 630,
       },
