@@ -200,7 +200,7 @@ export default function Home() {
       <section style={cardStyle}>
         <div
           style={{
-            fontFamily: "SBAggrob",
+            fontFamily: "SBAggrol",
             fontSize: 24,
             fontWeight: 900,
             letterSpacing: -0.2,
@@ -211,7 +211,7 @@ export default function Home() {
 
         <div
           style={{
-            fontFamily: "SBAggrob",
+            fontFamily: "SBAggrol",
 
             marginTop: 12,
             display: "grid",
