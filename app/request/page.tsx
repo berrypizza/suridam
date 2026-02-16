@@ -202,7 +202,7 @@ export default function RequestPage() {
             value={symptom}
             onChange={(e) => setSymptom(e.target.value)}
             rows={4}
-            placeholder="예) 싱크대 문짝이 떨어졌어요"
+            placeholder="예)  싱크대 상부장이 떨어졌어요"
             style={{
               marginTop: 6,
               padding: 12,
@@ -213,7 +213,7 @@ export default function RequestPage() {
           />
         </label>
 
-        <div style={{ fontSize: 12, color: "#911" }}>
+        <div style={{ fontSize: 17, color: "#911" }}>
           ※ 사진은 문자 화면에서 <b>첨부</b>로 보내주세요
         </div>
 
