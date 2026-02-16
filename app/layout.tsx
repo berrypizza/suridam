@@ -4,7 +4,22 @@ import HammerMark from "./components/HammerMark";
 
 export const metadata: Metadata = {
   title: "수리담",
-  description: "수리를 담다. 사진 1장으로 상담하는 배관 교체 서비스",
+  description: "망가진 가구, 새로 사기 전에 사진 한 장으로 상담하세요.",
+  openGraph: {
+    title: "수리담 가구 수리 리폼",
+    description: "사진 1~3장으로 수리 리폼 상담",
+    url: "https://suridam.vercel.app/",
+    siteName: "수리담",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
