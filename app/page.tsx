@@ -2,8 +2,21 @@ import Image from "next/image";
 import surirang from "@/public/surirang.png";
 import surirang2 from "@/public/suriragn2.png";
 import surirang3 from "@/public/surirang3.png";
+import logo from "@/public/logo.png";
 
 import surirangDance from "@/public/surirangDance.webp";
+
+const reviewImages = [
+  "/reviews/review1.jpg",
+  "/reviews/review2.jpg",
+  "/reviews/review3.jpg",
+  "/reviews/review4.jpg",
+  "/reviews/review5.jpg",
+  "/reviews/review6.jpg",
+  "/reviews/review7.jpg",
+  "/reviews/review8.jpg",
+  "/reviews/review9.jpg",
+];
 
 export default function Home() {
   const COLORS = {
@@ -23,6 +36,7 @@ export default function Home() {
     borderRadius: 22,
     padding: 16,
     boxShadow: "0 14px 40px rgba(0,0,0,0.08)",
+    overflowX: "hidden",
   };
 
   return (
@@ -77,7 +91,76 @@ export default function Home() {
           <span style={{ fontSize: 12, opacity: 0.85 }}>(10초 소요)</span>
         </a>
       </section>
+      <section style={cardStyle}>
+        <div style={{ width: "100%" }}>
+          <div
+            style={{
+              fontFamily: "Pretendard",
+              fontWeight: 900,
+              fontSize: 18,
+              letterSpacing: -0.2,
+              marginBottom: 10,
+            }}>
+            실제 고객 후기
+          </div>
 
+          {/* viewport */}
+          <div
+            style={{
+              width: "100%",
+              overflow: "hidden",
+              borderRadius: 18,
+              position: "relative",
+            }}>
+            {/* track */}
+            <div
+              className="reviewTrack"
+              style={{
+                display: "flex",
+                gap: 12,
+                width: "max-content",
+                willChange: "transform",
+              }}>
+              {[...reviewImages, ...reviewImages].map((src, index) => (
+                <div
+                  key={`${src}-${index}`}
+                  style={{
+                    flex: "0 0 auto",
+                    borderRadius: 16,
+                    overflow: "hidden",
+                    border: `1px solid ${COLORS.border}`,
+                    background: "#FAFAFA",
+                  }}>
+                  <Image
+                    src={src}
+                    alt={`수리담 리뷰 사진 ${index + 1}`}
+                    width={220}
+                    height={220}
+                    style={{
+                      display: "block",
+                      width: 220,
+                      height: 220,
+                      objectFit: "cover",
+                    }}
+                    priority={index < 2}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div
+            style={{
+              marginTop: 10,
+              fontSize: 12,
+              color: COLORS.subText,
+              lineHeight: 1.4,
+            }}>
+            * 리뷰 이미지는 일부만 노출됩니다. 더 많은 사례는 블로그/유튜브에서
+            확인 가능해요.
+          </div>
+        </div>
+      </section>
       {/* ▼ 수리랑 메인 카드 (CTA 포함) */}
       <section
         style={{
@@ -91,6 +174,7 @@ export default function Home() {
           gap: 14,
         }}>
         {/* 상단 브랜드 영역 */}
+
         <div
           style={{
             display: "flex",
@@ -200,9 +284,9 @@ export default function Home() {
       <section style={cardStyle}>
         <div
           style={{
-            fontFamily: "SBAggrol",
-            fontSize: 24,
+            fontFamily: "Pretendard",
             fontWeight: 900,
+            fontSize: 24,
             letterSpacing: -0.2,
             color: "#2fae8a",
           }}>
@@ -211,8 +295,8 @@ export default function Home() {
 
         <div
           style={{
-            fontFamily: "SBAggrol",
-
+            fontFamily: "Pretendard",
+            fontWeight: 700,
             marginTop: 12,
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -239,7 +323,6 @@ export default function Home() {
                 borderRadius: 18,
                 padding: 12,
                 background: "#FAFAFA",
-                fontWeight: 850,
                 letterSpacing: -0.2,
               }}>
               {t}
@@ -269,9 +352,9 @@ export default function Home() {
       <section style={cardStyle}>
         <div
           style={{
-            fontFamily: "SBAggrob",
-            fontSize: 24,
+            fontFamily: "Pretendard",
             fontWeight: 900,
+            fontSize: 24,
             letterSpacing: -0.2,
           }}>
           진행 방식
@@ -283,9 +366,9 @@ export default function Home() {
             paddingLeft: 18,
             color: COLORS.subText,
             lineHeight: 1.7,
-            fontWeight: 700,
             fontSize: 14,
-            fontFamily: "SBAggrol",
+            fontFamily: "Pretendard",
+            fontWeight: 700,
           }}>
           <li>
             요청 누르기({" "}

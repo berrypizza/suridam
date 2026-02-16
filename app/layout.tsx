@@ -29,6 +29,8 @@ export default function RootLayout({
           background: COLORS.bg,
           color: COLORS.text,
           fontFamily: "system-ui, -apple-system, Segoe UI, Roboto, sans-serif",
+          overflowX: "hidden", // ✅ 추가
+          maxWidth: "100%", // ✅ 추가(안전)
         }}>
         <div
           style={{
