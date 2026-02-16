@@ -48,10 +48,10 @@ export default function Home() {
             marginTop: 8,
             marginBottom: 0,
             fontSize: 26,
-            fontWeight: 950,
             letterSpacing: -0.4,
             lineHeight: 1.15,
-            fontFamily: "SBAggrob",
+            fontFamily: "Pretendard",
+            fontWeight: 900,
           }}>
           상담부터 방문까지,
           <br />
@@ -60,7 +60,8 @@ export default function Home() {
 
         <p
           style={{
-            fontFamily: "SBAggrol",
+            fontFamily: "Pretendard",
+            fontWeight: 500,
             marginTop: 10,
             color: COLORS.subText,
             lineHeight: 1.55,
@@ -87,7 +88,14 @@ export default function Home() {
             letterSpacing: -0.2,
           }}>
           💬{" "}
-          <b style={{ fontFamily: "SBAggrol", color: "#bbff00ff" }}>요청하기</b>
+          <b
+            style={{
+              fontFamily: "Pretendard",
+              fontWeight: 700,
+              color: "#bbff00ff",
+            }}>
+            요청하기
+          </b>
           <span style={{ fontSize: 12, opacity: 0.85 }}>(10초 소요)</span>
         </a>
       </section>
@@ -153,9 +161,11 @@ export default function Home() {
           <div
             style={{
               marginTop: 10,
-              fontSize: 12,
+              fontSize: 14,
               color: COLORS.subText,
               lineHeight: 1.4,
+              fontFamily: "Pretendard",
+              fontWeight: 500,
             }}>
             * 리뷰 이미지는 일부만 노출됩니다. 더 많은 사례는 블로그/유튜브에서
             확인 가능해요.
@@ -191,8 +201,13 @@ export default function Home() {
             }}
           />
 
-          <div style={{ fontFamily: "SBAggrob", lineHeight: 1.35 }}>
-            <div style={{ fontWeight: 900, letterSpacing: -0.2 }}>수리랑</div>
+          <div
+            style={{
+              fontFamily: "Pretendard",
+              fontWeight: 900,
+              lineHeight: 1.35,
+            }}>
+            <div style={{ letterSpacing: -0.2 }}>수리랑</div>
             <div style={{ fontSize: 12, color: "#777" }}>
               가구 수리 리폼 하는 호랑이
             </div>
@@ -369,7 +384,7 @@ export default function Home() {
             lineHeight: 1.7,
             fontSize: 14,
             fontFamily: "Pretendard",
-            fontWeight: 700,
+            fontWeight: 500,
           }}>
           <li>
             요청 누르기({" "}
