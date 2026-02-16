@@ -37,13 +37,20 @@ export default function Home() {
             fontWeight: 950,
             letterSpacing: -0.4,
             lineHeight: 1.15,
+            fontFamily: "SBAggrob",
           }}>
           상담부터 방문까지,
           <br />
           수리를 담다.
         </h1>
 
-        <p style={{ marginTop: 10, color: COLORS.subText, lineHeight: 1.55 }}>
+        <p
+          style={{
+            fontFamily: "SBAggrol",
+            marginTop: 10,
+            color: COLORS.subText,
+            lineHeight: 1.55,
+          }}>
           <b style={{ color: COLORS.text }}>작은 수리 </b>부터
           <b style={{ color: COLORS.text }}> 큰 수리 </b>까지.
           <br /> 사진 1~3장으로 수리견적 받을 수 있어요.
@@ -65,7 +72,8 @@ export default function Home() {
             fontWeight: 900,
             letterSpacing: -0.2,
           }}>
-          💬 <b style={{ color: "#bbff00ff" }}>요청하기</b>
+          💬{" "}
+          <b style={{ fontFamily: "SBAggrol", color: "#bbff00ff" }}>요청하기</b>
           <span style={{ fontSize: 12, opacity: 0.85 }}>(10초 소요)</span>
         </a>
       </section>

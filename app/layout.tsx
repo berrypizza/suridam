@@ -58,7 +58,15 @@ export default function RootLayout({
                     display: "inline-block",
                     justifyContent: "center",
                   }}>
-                  <h1>수리담</h1>
+                  <h1
+                    style={{
+                      fontFamily: "SBAggroB",
+                      color: "#2fae8a",
+                      fontWeight: "1000",
+                      fontSize: "21px",
+                    }}>
+                    수리담 가구 수리 리폼
+                  </h1>
 
                   <div
                     style={{
@@ -66,10 +74,12 @@ export default function RootLayout({
                       fontSize: 12,
                       color: COLORS.subText,
                       justifyContent: "center",
+                      marginTop: "1px",
+                      fontFamily: "SBAggroL",
                     }}>
                     <p>
-                      담을 수리를 찾아보세요, <br /> 수리담의 수리랑에게
-                      요청하면 됩니다.
+                      망가진 가구, 새로 사기 전에,
+                      <br /> 사진 한 장으로 수리 리폼 견적 받아보세요.
                     </p>{" "}
                   </div>
                 </div>
