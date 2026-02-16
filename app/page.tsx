@@ -106,6 +106,7 @@ export default function Home() {
 
           {/* viewport */}
           <div
+            className="reviewViewport"
             style={{
               width: "100%",
               overflow: "hidden",

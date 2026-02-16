@@ -131,7 +131,26 @@ body {
   animation: reviewMarquee 28s linear infinite;
 }
 
-/* ✅ 마우스 올리면 멈춤 */
-.reviewTrack:hover {
+@keyframes reviewMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.reviewTrack {
+  animation: reviewMarquee 28s linear infinite;
+  animation-play-state: running;
+}
+
+/* ✅ PC: 마우스로 '누르는 동안'만 멈춤 */
+.reviewViewport:active .reviewTrack {
   animation-play-state: paused;
+}
+
+/* ✅ 키보드/포커스(클릭 후 포커스가 남는 케이스) 방지용 */
+.reviewViewport:focus-within .reviewTrack {
+  animation-play-state: running;
 }
