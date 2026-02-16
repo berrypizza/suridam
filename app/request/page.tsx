@@ -49,12 +49,12 @@ export default function RequestPage() {
 
   const smsBody = useMemo(
     () => buildSmsBody({ name, customerPhone, address, symptom }),
-    [name, customerPhone, address, symptom]
+    [name, customerPhone, address, symptom],
   );
 
   const smsHref = useMemo(
     () => `sms:${OWNER_PHONE}?&body=${encodeURIComponent(smsBody)}`,
-    [smsBody]
+    [smsBody],
   );
 
   return (
@@ -86,10 +86,11 @@ export default function RequestPage() {
           style={{
             fontSize: 24,
             fontWeight: 800,
-            color: "#444",
+            color: "#2fae8a",
             borderRadius: 8,
+            fontFamily: "SBAggrob",
           }}>
-          문자 수리 상담
+          문자 수리 리폼 상담
         </h1>
         <p
           style={{
@@ -97,6 +98,7 @@ export default function RequestPage() {
             color: "#444",
             lineHeight: 1.5,
             textAlign: "left",
+            fontFamily: "SBAggrol",
           }}>
           정보 입력 후 <b>상담 문자 보내기</b>를 누르면 문자 앱이 열립니다.{" "}
           (모바일만 가능합니다)
@@ -131,6 +133,7 @@ export default function RequestPage() {
           boxShadow: "0 14px 40px rgba(0,0,0,0.08)",
           display: "grid",
           gap: 12,
+          fontFamily: "SBAggrol",
         }}>
         {/* 이름 */}
         <label>

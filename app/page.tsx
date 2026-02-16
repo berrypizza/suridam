@@ -106,10 +106,10 @@ export default function Home() {
             }}
           />
 
-          <div style={{ lineHeight: 1.35 }}>
+          <div style={{ fontFamily: "SBAggrob", lineHeight: 1.35 }}>
             <div style={{ fontWeight: 900, letterSpacing: -0.2 }}>수리랑</div>
             <div style={{ fontSize: 12, color: "#777" }}>
-              수리담에 담아, 수리랑들이 갑니다.
+              가구 수리 리폼 하는 호랑이
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function Home() {
                 // background: "#fff",
               }}
             />
-            <div style={{ lineHeight: 1.2 }}>
+            <div style={{ fontFamily: "SBAggrol", lineHeight: 1.2 }}>
               <div style={{ fontSize: 14, marginBottom: "3px" }}>
                 <span style={{}}>▶</span>
                 <span style={{ color: "#bbff00ff" }}>YouTube</span>
@@ -185,7 +185,7 @@ export default function Home() {
                 // background: "#fff",
               }}
             />
-            <div style={{ lineHeight: 1.2 }}>
+            <div style={{ fontFamily: "SBAggrol", lineHeight: 1.2 }}>
               <div style={{ fontSize: 14, marginBottom: "3px" }}>
                 <span style={{ fontWeight: 900 }}>N</span>
                 <span style={{ color: "#bbff00ff" }}> Blog</span>
@@ -198,12 +198,21 @@ export default function Home() {
       {/* ▲ 수리랑 메인 카드 */}
       {/* Scope */}
       <section style={cardStyle}>
-        <div style={{ fontSize: 14, fontWeight: 900, letterSpacing: -0.2 }}>
+        <div
+          style={{
+            fontFamily: "SBAggrob",
+            fontSize: 24,
+            fontWeight: 900,
+            letterSpacing: -0.2,
+            color: "#2fae8a",
+          }}>
           지금 가능한 작업
         </div>
 
         <div
           style={{
+            fontFamily: "SBAggrob",
+
             marginTop: 12,
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -258,7 +267,13 @@ export default function Home() {
       {/* How */}
 
       <section style={cardStyle}>
-        <div style={{ fontSize: 16, fontWeight: 900, letterSpacing: -0.2 }}>
+        <div
+          style={{
+            fontFamily: "SBAggrob",
+            fontSize: 24,
+            fontWeight: 900,
+            letterSpacing: -0.2,
+          }}>
           진행 방식
         </div>
 
@@ -270,6 +285,7 @@ export default function Home() {
             lineHeight: 1.7,
             fontWeight: 700,
             fontSize: 14,
+            fontFamily: "SBAggrol",
           }}>
           <li>
             요청 누르기({" "}
